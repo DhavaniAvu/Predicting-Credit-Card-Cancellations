@@ -11,7 +11,7 @@ This project aimed to analyze the factors influencing credit card account closur
  Tools and Technologies Used
 
 ## Programming Languages: 
-R
+R Programming
 ## Data Manipulation and Analysis: 
 dplyr, tidyr
 ## Machine Learning: 
