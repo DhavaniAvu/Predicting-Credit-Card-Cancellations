@@ -5,16 +5,21 @@ This project aimed to analyze the factors influencing credit card account closur
 
 # Research Questions
 
-## What factors are linked to customers closing their credit card accounts?
-## Can we accurately predict whether a customer will close their account?
-## What measures or policies can the bank implement to minimize the risk of customer loss?
-## Tools and Technologies Used
+ What factors are linked to customers closing their credit card accounts?
+ Can we accurately predict whether a customer will close their account?
+ What measures or policies can the bank implement to minimize the risk of customer loss?
+ Tools and Technologies Used
 
-# Programming Languages: R
-# Data Manipulation and Analysis: dplyr, tidyr
-# Machine Learning: Logistic regression, decision trees, random forests
-# Model Evaluation: ROC curve, accuracy, AUC-ROC
-# Visualization: ggplot2
+## Programming Languages: 
+R
+## Data Manipulation and Analysis: 
+dplyr, tidyr
+## Machine Learning: 
+Logistic regression, decision trees, random forests
+## Model Evaluation:
+ROC curve, accuracy, AUC-ROC
+## Visualization: 
+ggplot2
 
 # Analysis and Techniques
 The analysis employed several models to predict credit card account closures and evaluate their performance:
