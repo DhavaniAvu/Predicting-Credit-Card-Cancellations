@@ -41,4 +41,4 @@ Promote Card Utilization: Launch campaigns with incentives and rewards to increa
 Optimize Credit Limit Management: Dynamically adjust credit limits based on individual behavior and creditworthiness.
 Periodic Card Feature Enhancement: Regularly review and enhance card features to remain competitive and retain customers.
 
-## Please refer the ipynb pythonb file or the html file for the clear analysis and code. 
+## Please refer the ipynb python file or the html file for the clear analysis and code. 
