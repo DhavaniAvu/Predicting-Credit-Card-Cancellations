@@ -52,7 +52,7 @@ The outcome variable in this data is customer_status. This variable records whet
 ## Programming Languages: 
 R Programming
 ## Data Manipulation and Analysis: 
-dplyr, tidyr
+dplyr, tidyr, tidyverse, tidymodels.
 ## Machine Learning: 
 Logistic regression, decision trees, random forests
 ## Model Evaluation:
