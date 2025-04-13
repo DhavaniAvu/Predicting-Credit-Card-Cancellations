@@ -42,9 +42,10 @@ The bank aims to:
 We performed:
 - **Exploratory Data Analysis (EDA)** using Seaborn and Matplotlib.
 - **Missing value treatment** and **outlier detection**.
+- **Statistical Testing & Hypothesis Analysis** 
 - **Feature scaling** using StandardScaler and MinMaxScaler.
 - **Encoding** of categorical variables.
-- 
+
 ## 🧪 Statistical Testing & Hypothesis Analysis
 
 We conducted multiple statistical tests to evaluate significant differences between customers who **closed their credit card accounts** vs those who remained **active**. These tests helped us validate assumptions and identify key variables influencing customer behavior.
