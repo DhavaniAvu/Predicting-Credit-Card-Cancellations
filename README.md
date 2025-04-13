@@ -91,5 +91,15 @@ We also applied **cross-validation** for reliable performance metrics.
 - `pmdarima` – time series auto ARIMA (if needed in future)
 
 ## 📁 File Structure
+├── ml_project.ipynb # Jupyter Notebook with complete code and analysis 
+├── ml_project.html # HTML export of the notebook for easier viewing 
+├── datalab_export_2024-08-11.csv # Dataset used for model training and analysis 
+├── README.md # Project overview, methodology, and key results
+
+
+### 💡 Notes:
+- The `.ipynb` notebook is the main working file with EDA, statistical testing, and ML models.
+- The `.html` version is useful for sharing or previewing without running the code.
+- The `.csv` dataset includes raw data for preprocessing, visualization, and model input.
 
 
