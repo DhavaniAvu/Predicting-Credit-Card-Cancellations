@@ -26,7 +26,7 @@ The **target variable** is:
 
 The bank aims to:
 - Understand **why customers cancel accounts**.
-- **Predict future cancellations** with high accuracy.
+- **Predict cancellations** with high accuracy.
 - **Reduce costly errors** in churn prediction.
 - Suggest actionable insights to **retain customers**.
 
