@@ -46,6 +46,44 @@ We performed:
 - **Feature scaling** using StandardScaler and MinMaxScaler.
 - **Encoding** of categorical variables.
 
+## 🧹 Data Cleaning & Preprocessing
+
+Before modeling, we performed several data preparation steps to ensure high-quality inputs:
+
+### ✅ Cleaning Steps
+
+- **Missing Values Handling**:
+  - Identified and checked for missing values across numerical and categorical columns.
+  - Handled missing or null values appropriately depending on variable type (e.g., imputation or exclusion).
+  
+- **Filtering Data**:
+  - Focused only on relevant rows by filtering for `customer_status` in `["closed_account", "active"]` to exclude incomplete or irrelevant statuses.
+
+- **Outlier Detection and Handling**:
+  - Visualized distributions (density plots) of key numerical variables such as:
+    - `months_inactive_last_year`
+    - `utilization_ratio`
+    - `transactions_last_year`
+  - Identified skewed patterns and ensured these didn’t bias the models.
+
+- **Normalization/Scaling**:
+  - Applied `StandardScaler` and `MinMaxScaler` for feature normalization to improve model performance and training consistency.
+
+- **Encoding Categorical Variables**:
+  - Converted variables like `marital_status`, `education`, `employment_status`, and `card_type` into suitable formats for modeling.
+  
+- **Renamed or Cleaned Columns**:
+  - Ensured consistent naming for variables used in modeling and plotting.
+
+### 📌 Visualization-Driven Quality Checks
+
+- Used **`ggplot2`** and **`plotly`** to create:
+  - Distribution plots for checking skewness and comparing churn vs active patterns
+  - Bar charts for categorical variable distributions across churn status
+
+These steps ensured we had clean, normalized, and interpretable data ready for statistical testing and model training.
+
+
 ## 🧪 Statistical Testing & Hypothesis Analysis
 
 We conducted multiple statistical tests to evaluate significant differences between customers who **closed their credit card accounts** vs those who remained **active**. These tests helped us validate assumptions and identify key variables influencing customer behavior.
