@@ -37,14 +37,6 @@ The bank aims to:
 - Which customers are at the highest risk?
 - What strategies might prevent churn?
 
-## 📊 Data Exploration & Preprocessing
-
-We performed:
-- **Exploratory Data Analysis (EDA)** using Seaborn and Matplotlib.
-- **Missing value treatment** and **outlier detection**.
-- **Statistical Testing & Hypothesis Analysis** 
-- **Feature scaling** using StandardScaler and MinMaxScaler.
-- **Encoding** of categorical variables.
 
 ## 🧹 Data Cleaning & Preprocessing
 
@@ -82,6 +74,58 @@ Before modeling, we performed several data preparation steps to ensure high-qual
   - Bar charts for categorical variable distributions across churn status
 
 These steps ensured we had clean, normalized, and interpretable data ready for statistical testing and model training.
+
+## 📊 Exploratory Data Analysis (EDA)
+
+To understand the structure and insights hidden in the data, we performed extensive EDA, including both visual and statistical summaries.
+
+### 📌 Key EDA Highlights
+
+- **Age Distribution & Impact**:
+  - Histogram and Q-Q plots to assess distribution of `age`
+  - Line graphs showing how account closure varies by age
+  - Segmented `age` into bins using `cut()` for better granularity
+
+- **Categorical Variable Analysis**:
+  - Grouped and visualized:
+    - `marital_status`
+    - `education`
+    - `employment_status`
+    - `card_type`
+  - Used **side-by-side bar charts** to show closed vs active accounts by category
+
+- **Numerical Variable Distributions**:
+  - Created **density plots** to compare:
+    - `months_inactive_last_year`
+    - `utilization_ratio`
+    - `transactions_last_year`
+  - Used `ggplot2` + `plotly` for interactive visuals
+
+- **Summary Tables**:
+  - Used `group_by` and `mutate` to calculate:
+    - Percentage of account closures by demographic and behavioral groups
+  - Created tables to highlight trends in customer churn
+
+
+## 🛠️ Feature Engineering
+
+We engineered new features and transformed existing ones to improve model performance.
+
+### ✅ Steps Taken
+
+- **Age Segmentation**:
+  - Created a new variable `age_segment` using 5-year bins (e.g., 20–25, 25–30...)
+
+- **Percentage Columns**:
+  - Calculated churn percentages across demographics (e.g., closed_account_percent by age or dependents)
+
+- **Categorical Variable Encoding**:
+  - Prepared categorical variables (like `marital_status`, `education`, etc.) for modeling using appropriate encoding techniques.
+
+- **Distribution Checks**:
+  - Performed Q-Q plots to assess normality for numerical features and guide later transformations (used in statistical testing)
+
+These engineered features were later used in statistical tests and machine learning models to improve interpretability and predictive power.
 
 
 ## 🧪 Statistical Testing & Hypothesis Analysis
