@@ -1,7 +1,8 @@
-# -Analysis of Credit Card Account Closures-
-This file contains a project of predicting credit card cancellations using R programming.
+# 🧠 Predicting Credit Card Account Cancellations
 
-This project aimed to analyze the factors influencing credit card account closures to enhance customer retention strategies. The objective was to pinpoint key variables linked to account closures, evaluate the performance of predictive models, and offer actionable recommendations to the bank for reducing customer churn.
+## 📌 Overview
+
+This machine learning project focuses on identifying patterns that lead to customer credit card account cancellations using real-world banking data. The goal is to explore the key factors influencing cancellations and to build predictive models that estimate the likelihood of a customer closing their account in the future.
 
 ## About the dataset
 The credit_card_df data frame contains information on the customers of a large U.S. bank which provides a number of financial services including multiple credit card offerings.
@@ -18,66 +19,77 @@ The data set contains a mixture of customer demographics and their financial beh
 The outcome variable in this data is customer_status. This variable records whether a customer eventually closed their account and indicates a financial loss to the company.
 
 
+The **target variable** is:
+- `customer_status`: indicates whether a customer has **closed their credit card account** (`closed_account`) or not (`active_account`).
 
-## Data Definitions
+## ❓ Problem Statement
 
-| Variable            	     | Definition                                 	                | Data Type    |
-|:---------------------------|:-------------------------------------------------------------|:-------------|
-| customer_status            | Customer status (closed account or active)                   | Factor       |
-| age                        | Customer age                                                 | Numeric      |
-| dependents                 | Number of dependents in household                            | Numeric      |
-| education                  | Customer education level                                     | Factor       |
-| marital_status             | Marital status                                               | Factor       |
-| employment_status          | Employment status                                            | Factor       |
-| income                     | Annual income (US Dollars)                                   | Numeric      |
-| card_type                  | Type of credit card                                          | Factor       |
-| months_since_first_account | Months since first credit card account activated             | Numeric      |
-| total_accounts             | Total accounts (credit checking and savings)                 | Numeric      |
-| months_inactive_last_year  | Months without credit card activity last year                | Numeric      |
-| contacted_last_year        | Number of times contacted last year by sales representatives | Numeric      |
-| credit_limit               | Current credit limit                                         | Numeric      |
-| utilization_ratio          | Average monthly balance to credit limit                      | Numeric      |
-| spend_ratio_q4_q1          | Ratio of total Q4 to Q1 spending last year                   | Numeric      |
-| total_spend_last_year      | Total amount charged last year                               | Numeric      |
-| transactions_last_year     | Number of transactions last year                             | Numeric      |
-| transaction_ratio_q4_q1    | Ratio of total Q4 to Q1 transactions last year               | Numeric      |
+The bank aims to:
+- Understand **why customers cancel accounts**.
+- **Predict future cancellations** with high accuracy.
+- **Reduce costly errors** in churn prediction.
+- Suggest actionable insights to **retain customers**.
 
-## Research Questions
+## 🔍 Key Questions
 
- What factors are linked to customers closing their credit card accounts?
- Can we accurately predict whether a customer will close their account?
- What measures or policies can the bank implement to minimize the risk of customer loss?
- Tools and Technologies Used
+- What customer behaviors are most associated with account cancellations?
+- Can we accurately predict account closures using ML models?
+- Which customers are at the highest risk?
+- What strategies might prevent churn?
 
-## Programming Languages: 
-R Programming
-## Data Manipulation and Analysis: 
-dplyr, tidyr, tidyverse, tidymodels.
-## Machine Learning: 
-Logistic regression, decision trees, random forests
-## Model Evaluation:
-ROC curve, accuracy, AUC-ROC
-## Visualization: 
-ggplot2
+## 📊 Data Exploration & Preprocessing
 
-## Analysis and Techniques
-The analysis employed several models to predict credit card account closures and evaluate their performance:
-### Logistic Regression:
-Identified crucial variables affecting account closures and achieved a model accuracy of 80% with a ROC AUC above the baseline.
-### Decision Tree: 
-Provided insights into decision points influencing account closures, with a high accuracy of 89.35% and a ROC AUC of 91.51% across cross-validation folds.
-### Random Forest: 
-Demonstrated robust performance with a high accuracy of 95.06% and a ROC AUC of 98.96%, requiring minimal hyperparameter tuning.
+We performed:
+- **Exploratory Data Analysis (EDA)** using Seaborn and Matplotlib.
+- **Missing value treatment** and **outlier detection**.
+- **Feature scaling** using StandardScaler and MinMaxScaler.
+- **Encoding** of categorical variables.
+- 
+## 🧪 Statistical Testing & Hypothesis Analysis
 
-## Outcomes and Insights
-The analysis identified several factors associated with credit card account closures, such as part-time employment status, card type, frequency of customer care interactions, utilization ratio, and total spending. The models showed strong predictive performance, with the Random Forest model delivering the highest accuracy and ROC AUC. Key recommendations include targeted retention strategies for part-time employees, enhancing card benefits, proactive customer service, and promoting card usage.
+We conducted multiple statistical tests to evaluate significant differences between customers who **closed their credit card accounts** vs those who remained **active**. These tests helped us validate assumptions and identify key variables influencing customer behavior.
 
-## Recommendations
-Targeted Retention for Part-Time Employees: Develop personalized strategies to cater to the specific needs of part-time employees.
-Enhance "Blue" Card Benefits: Improve the benefits and features of the "blue" card to lower closure rates.
-Proactive Customer Service: Implement solutions to address frequent customer service interactions and prevent dissatisfaction.
-Promote Card Utilization: Launch campaigns with incentives and rewards to increase card usage.
-Optimize Credit Limit Management: Dynamically adjust credit limits based on individual behavior and creditworthiness.
-Periodic Card Feature Enhancement: Regularly review and enhance card features to remain competitive and retain customers.
+### ✅ Tests Performed
 
-## Please refer the ipynb python file or the html file for the clear analysis and code. 
+| Test Type               | Variable(s)                           | Purpose                                                                 |
+|------------------------|----------------------------------------|-------------------------------------------------------------------------|
+| **Shapiro-Wilk Test**  | `age`, `dependents`, `income`          | Assess if numerical variables are normally distributed                 |
+| **Two-Sample t-Test**  | `age`, `months_inactive_last_year`, `utilization_ratio`, `transactions_last_year` | Compare means between closed vs active groups                          |
+| **Mann-Whitney U Test**| `dependents`, `income`                 | Compare medians when data is not normally distributed                   |
+| **Chi-Squared Test**   | `marital_status`, `education`, `employment_status`, `card_type` vs `customer_status` | Assess independence between categorical variables and churn status     |
+
+### 📌 Key Insights from Hypothesis Testing
+
+- **Age** and **Utilization Ratio** showed statistically significant differences between customers who closed and retained accounts.
+- Categorical variables like **Marital Status**, **Education Level**, and **Employment Status** were strongly associated with churn behavior.
+- For non-normal distributions such as **income**, we used **non-parametric tests** to ensure reliable inference.
+- These tests guided our **feature selection** and helped improve the interpretability of machine learning models.
+
+
+## ⚙️ Machine Learning Models
+
+The following models were trained and evaluated:
+
+- **Logistic Regression**
+- **Random Forest Regressor**
+- **Linear Regression (for comparison)**
+- Model evaluation using:
+  - Mean Absolute Error (MAE)
+  - Mean Squared Error (MSE)
+  - Root Mean Squared Error (RMSE)
+  - R² Score
+
+We also applied **cross-validation** for reliable performance metrics.
+
+## 📦 Libraries Used
+
+- `pandas`, `numpy` – data manipulation
+- `matplotlib`, `seaborn` – visualization
+- `sklearn` – preprocessing, modeling, and evaluation
+- `statsmodels` – statistical modeling
+- `scipy` – transformations (Box-Cox, Yeo-Johnson)
+- `pmdarima` – time series auto ARIMA (if needed in future)
+
+## 📁 File Structure
+
+
