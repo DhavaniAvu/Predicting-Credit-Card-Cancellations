@@ -44,6 +44,15 @@ Before modeling, we performed several data preparation steps to ensure high-qual
 
 ### ✅ Cleaning Steps
 
+**✅ SQL-Based Data Preparation**
+
+- Queried and filtered **100K+ records** from a banking database using SQL.
+- Applied SQL operations such as:
+  - `JOIN` for combining demographic and behavioral data.
+  - `GROUP BY` and `CASE WHEN` for churn statistics.
+  - `WINDOW FUNCTIONS` to compute recent activity patterns (e.g., average monthly transactions).
+  - Exported cleaned data to `.csv` for modeling in Python.
+    
 - **Missing Values Handling**:
   - Identified and checked for missing values across numerical and categorical columns.
   - Handled missing or null values appropriately depending on variable type (e.g., imputation or exclusion).
