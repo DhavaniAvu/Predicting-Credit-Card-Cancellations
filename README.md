@@ -51,7 +51,7 @@ Before modeling, we performed several data preparation steps to ensure high-qual
   - `JOIN` for combining demographic and behavioral data.
   - `GROUP BY` and `CASE WHEN` for churn statistics.
   - `WINDOW FUNCTIONS` to compute recent activity patterns (e.g., average monthly transactions).
-  - Exported cleaned data to `.csv` for modeling in Python.
+  - Exported cleaned data to `.csv` for modeling in R.
     
 - **Missing Values Handling**:
   - Identified and checked for missing values across numerical and categorical columns.
